@@ -112,3 +112,8 @@ class ZonnecelExperiment:
             np.array(voltages_std),
             np.array(currents_std),
         )
+    
+
+experiment=ZonnecelExperiment()
+scan = experiment.scan()
+print(scan)
