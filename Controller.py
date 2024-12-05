@@ -92,17 +92,16 @@ class ArduinoVisaDevice:
         voltage = (raw_value / 1023) * 3.3
         return voltage
 
-devices=list_devices()
+
+devices = list_devices()
 print(devices)
 
-device=ArduinoVisaDevice(port_name="ASRL4::INSTR")
+# device = ArduinoVisaDevice(port_name="ASRL4::INSTR")
+device = ArduinoVisaDevice(port_name="ASRL12::INSTR")
 device.set_output_value(channel=0, value=1023)
-output=device.get_output_value(channel=0)
-voltage1=device.get_input_voltage(channel=1)
-voltage2=device.get_input_voltage(channel=2)
+output = device.get_output_value(channel=0)
+voltage1 = device.get_input_voltage(channel=1)
+voltage2 = device.get_input_voltage(channel=2)
 print(f"output: {output}")
 print(f"Gemeten op ch1: {voltage1}")
 print(f"Gemeten op ch2: {voltage2}")
-
-
-
